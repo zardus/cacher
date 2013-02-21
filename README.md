@@ -6,25 +6,26 @@ Awesome caching module for python.
 # Usage
 
 1. import the cacher:
-	```import cacher
-	```
-
+```python
+import cacher
+```
 2. wrap a function
-	```@cacher.wrap(autosave = True)
-	def some_long_function(n):
-	  pass
-	```
-
+```python
+@cacher.wrap(autosave = True)
+def some_long_function(n):
+  pass
+```
 3. Call the function!
-	```some_long_function(1) # takes forever!!!
-	some_long_function(1) # super fast!!!
-	some_long_function(2) # takes forever!!!
-	some_long_function(2) # super fast!!!
-	```
-
+```python
+some_long_function(1) # takes forever!!!
+some_long_function(1) # super fast!!!
+some_long_function(2) # takes forever!!!
+some_long_function(2) # super fast!!!
+```
 4. If needed, you can get at the original function by doing:
-	```some_long_function.wrapped_func(1) # takes forever!!!
-	```
+```python
+some_long_function.wrapped_func(1) # takes forever!!!
+```
 
 # Options
 
@@ -44,7 +45,8 @@ Several options can be passed to the wrap function:
 
 Sometimes, for various reasons, you might want to have seperate unrelated caches for the same project. This is facilitated by subdirectories:
 
-```@cacher.wrap(cacheid = "something", module_id = "woo")
+```python
+@cacher.wrap(cacheid = "something", module_id = "woo")
 def zomg(a):
   pass
 
@@ -67,6 +69,15 @@ zomg(1) # would be cached in cached/woo.zomg%something.p
 ```
 
 Every time a directory change takes place, the cacher flushes all the caches that have changed (and are not set to disk=False) out to disk.
+
+## logging
+
+The cacher logs using the "cacher" logger. You can turn on debugging by doing:
+
+```python
+import logging
+logging.getLogger("cacher").setLevel(logging.DEBUG)
+```
 
 # Bugs
 
