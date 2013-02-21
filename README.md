@@ -5,24 +5,31 @@ Awesome caching module for python.
 
 # Usage
 
-1. import the cacher:
+- import the cacher:
+
 ```python
 import cacher
 ```
-2. wrap a function
+
+- wrap a function
+
 ```python
 @cacher.wrap(autosave = True)
 def some_long_function(n):
   pass
 ```
-3. Call the function!
+
+- Call the function!
+
 ```python
 some_long_function(1) # takes forever!!!
 some_long_function(1) # super fast!!!
 some_long_function(2) # takes forever!!!
 some_long_function(2) # super fast!!!
 ```
-4. If needed, you can get at the original function by doing:
+
+- If needed, you can get at the original function by doing:
+
 ```python
 some_long_function.wrapped_func(1) # takes forever!!!
 ```
