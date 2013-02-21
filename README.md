@@ -14,7 +14,7 @@ import cacher
 - wrap a function
 
 ```python
-@cacher.wrap(autosave = True)
+@cacher.wrap()
 def some_long_function(n):
   pass
 ```
