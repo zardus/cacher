@@ -10,7 +10,6 @@ import os
 import logging
 
 l = logging.getLogger("cacher")
-l.setLevel(logging.DEBUG)
 
 basedir = "cached"
 subdir = ""
@@ -367,7 +366,7 @@ def wrapper(f, cache_name, each, disk, autosave, autodiscard):
 #   module_name - the name of the module. Default: function.__module__
 #   function_name - the name of the function. Default: function.__name__
 #   version_name - the version of the function. Default: str(hash(f.__code__))
-#   each - if this is True, the arguments to the function are cached and included in the filename
+#   each - if this is True, the arguments to the function are cached and included in the filename. Default: False
 #
 # Other options:
 #
