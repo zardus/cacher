@@ -10,7 +10,6 @@ import os
 import logging
 
 l = logging.getLogger("cacher")
-l.setLevel(logging.DEBUG)
 
 basedir = "cached"
 subdir = ""
